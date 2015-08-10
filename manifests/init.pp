@@ -16,5 +16,6 @@
 # \section{Application firewall}
 
 class app_firewall {
-    include "app_firewall::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "app_firewall::${lower_osfamily}"
 }
